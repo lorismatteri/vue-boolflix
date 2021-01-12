@@ -8,3 +8,22 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: red;
 }
+
+header {
+    background-color: black;
+    color: red;
+}
+
+.container {
+    width: 75%;
+    margin: auto;
+}
+
+.flex_between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
