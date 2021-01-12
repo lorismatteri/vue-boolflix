@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: red;
+    background-color: #252525;
 }
 
 header {
@@ -26,8 +26,20 @@ header {
     padding: 1rem;
 }
 
-.flex_around {
+.flex_wrap {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     padding: 1rem;
+}
+
+.card {
+    flex-basis: calc(25% - 2rem);
+    padding: 1rem;
+    border: 1px solid white;
+    margin: 1rem;
+    color: white;
+}
+
+.card h3, p:not(:last-child) {
+    padding-bottom: 0.5rem;
 }
