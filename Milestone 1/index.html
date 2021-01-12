@@ -23,21 +23,37 @@
 
         <div id="app">
 
-            
             <header>
+
                 <div class="container flex_between">
                     <div class="logo">
                         <h1>BOOLFLIX</h1>
                     </div>
                     <div class="search">
-                        <input type="text">
-                        <button id="btn_search">Cerca</button>
+                        <input type="text" v-model="searchString">
+                        <button id="btn_search" @click="cercaFilm">Cerca</button>
                     </div>
                 </div>
                 <!-- Container -->
 
             </header>
             <!-- /Header -->
+
+            <main>
+
+                <div class="container flex_around">
+                    <div class="card" v-for="film in films">
+                        <h3>{{film.title}}</h3>
+                        <p>{{film.original_title}}</p>
+                        <p>{{film.original_language}}</p>
+                        <p>{{film.vote_average}}</p>
+                    </div>
+                    
+                </div>
+                <!-- /Container -->
+
+            </main>
+            <!-- /Main -->
 
 
         </div>

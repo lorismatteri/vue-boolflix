@@ -26,4 +26,8 @@ header {
     padding: 1rem;
 }
 
-
+.flex_around {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
