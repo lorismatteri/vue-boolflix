@@ -1,7 +1,8 @@
 let app = new Vue ({
     el: '#app',
     data: {
-        shows: [],
+        films: [],
+        tvSeries: [],
         searchString: "",
     },
     methods: {
@@ -9,13 +10,13 @@ let app = new Vue ({
             let searchContent = this.searchString
             axios.get("https://api.themoviedb.org/3/search/movie?api_key=ebf14a283df056252b947c3b861417f2&language=it-IT&query=" + searchContent)
             .then(response => {
-                this.shows = response.data.results;
-                console.log(this.shows);
+                this.films = response.data.results;
+                console.log(this.films);
             });	
             axios.get("https://api.themoviedb.org/3/search/tv?api_key=ebf14a283df056252b947c3b861417f2&language=it-IT&query=" + searchContent).then(response => {
-                this.shows = response.data.results;
-                console.log(this.shows);
-            })
+                this.tvSeries = response.data.results;
+                console.log(this.tvSeries);
+            });
             
         }    
     },
