@@ -46,12 +46,16 @@
             <main>
 
                 <div class="container flex_wrap">
-                    <div class="card" v-for="film in films">
-                        <h3>{{film.title}}</h3>
-                        <p>Titolo originale: {{film.original_title}}</p>
-                        <p>Lingua: {{film.original_language}}</p>
-                        <p>Voto: <span v-for="(number, index) in Math.ceil(film.vote_average/2)"><i class="fas fa-star"></i></span></p>
-                    
+                    <div class="card" v-for="show in shows">
+                        <h3>{{show.title}}</h3>
+                        <p v-if="show.original_title">Titolo originale: {{show.original_title}}</p>
+                        <p v-else>Titolo originale: {{show.original_name}}</p>
+                        <p>Lingua: {{show.original_language}}</p>
+                        <p v-if="show.vote_average == 0">Voto: 0</p>
+                        <p v-else>Voto: <span v-for="(number, index) in Math.ceil(show.vote_average/2)"><i class="fas fa-star"></i></span></p>
+                    </div>
+                    <!-- /Card -->
+
                 </div>
                 <!-- /Container -->
 
