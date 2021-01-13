@@ -43,3 +43,12 @@ header {
 .card h3, p:not(:last-child) {
     padding-bottom: 0.5rem;
 }
+
+.card img {
+    width: 25px;
+    vertical-align: bottom;
+}
+
+.card i {
+    color: rgb(255, 230, 0);
+}
