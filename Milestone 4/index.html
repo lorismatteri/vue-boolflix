@@ -51,21 +51,24 @@
                     <div class="card cover" v-for="film in films">
                         <img :src="getCover(film.poster_path)" alt="" v-if="(film.poster_path)">
                         <div v-else class="no_image">
-                            <p>Non è presente nessuna immagine in archivio</p>
+                            <h3>{{film.title}}</h3>
+                            <p><strong>Non è presente nessuna immagine in archivio</strong></p>
                         </div>
                         <!-- /Immagine -->
 
                         <div class="card details" >
     
                             <h3>{{film.title}}</h3>
-                            <p>Titolo originale: {{film.original_title}}</p>
+                            <p><strong>Titolo originale:</strong> {{film.original_title}}</p>
     
-                            <p v-if="langs.includes(film.original_language)">Lingua: <img :src="getFlag(film.original_language)" alt="" class="flag"></p>
-                            <p v-else>Lingua: {{film.original_language}}</p>
+                            <p v-if="langs.includes(film.original_language)"><strong>Lingua:</strong> <img :src="getFlag(film.original_language)" alt="" class="flag"></p>
+                            <p v-else><strong>Lingua:</strong> {{film.original_language}}</p>
     
-                            <p>Voto: 
+                            <p><strong>Voto:</strong>  
                                 <i class="fas fa-star" v-for="(number, index) in Math.ceil(film.vote_average/2)"></i><i class="far fa-star" v-for="(number, index) in (5 - Math.ceil(film.vote_average/2))"></i>
                             </p>
+
+                            <p><strong>Overview:</strong> {{film.overview}}</p>
     
                         </div>
                     </div>
@@ -74,22 +77,25 @@
                     <div class="card cover" v-for="tvSerie in tvSeries">
                         <img :src="getCover(tvSerie.poster_path)" alt="" v-if="(tvSerie.poster_path)">
                         <div v-else class="no_image">
-                            <p>Non è presente nessuna immagine in archivio</p>
+                            <h3>{{tvSerie.name}}</h3>
+                            <p><strong>Non è presente nessuna immagine in archivio</strong></p>
                         </div>
                         <!-- /Immagine -->
 
                         <div class="card details" >
-                            
     
                             <h3>{{tvSerie.name}}</h3>
-                            <p>Titolo originale: {{tvSerie.original_name}}</p>
+                            <p><strong>Titolo originale:</strong> {{tvSerie.original_name}}</p>
     
-                            <p v-if="langs.includes(tvSerie.original_language)">Lingua: <img :src="getFlag(tvSerie.original_language)" alt="" class="flag"></p>
-                            <p v-else>Lingua: {{tvSerie.original_language}}</p>
-                            
-                            <p>Voto: 
+                            <p v-if="langs.includes(tvSerie.original_language)"><strong>Lingua:</strong> <img :src="getFlag(tvSerie.original_language)" alt="" class="flag"></p>
+                            <p v-else><strong>Lingua:</strong> {{tvSerie.original_language}}</p>
+    
+                            <p><strong>Voto:</strong>  
                                 <i class="fas fa-star" v-for="(number, index) in Math.ceil(tvSerie.vote_average/2)"></i><i class="far fa-star" v-for="(number, index) in (5 - Math.ceil(tvSerie.vote_average/2))"></i>
                             </p>
+
+                            <p><strong>Overview:</strong> {{tvSerie.overview}}</p>
+    
                         </div>
                     </div>
                     <!-- /Card SerieTV-->

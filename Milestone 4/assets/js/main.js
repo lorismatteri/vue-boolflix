@@ -4,7 +4,7 @@ let app = new Vue ({
         films: [],
         tvSeries: [],
         searchString: "",
-        langs: ['en', 'it', 'es', 'fr', 'de']
+        langs: ['en', 'it', 'es', 'fr', 'de'],
     },
     methods: {
         cercaFilm: function (string){
