@@ -49,28 +49,28 @@
                     <div class="card" v-for="film in films">
                         <h3>{{film.title}}</h3>
                         <p>Titolo originale: {{film.original_title}}</p>
-                        <p v-if="(film.original_language == 'en')">Lingua: <img src="./assets/img/en.png" alt=""></p>
-                        <p v-if="(film.original_language == 'it')">Lingua: <img src="./assets/img/it.png" alt=""></p>
-                        <p v-if="(film.original_language == 'fr')">Lingua: <img src="./assets/img/fr.png" alt=""></p>
-                        <p v-if="(film.original_language == 'de')">Lingua: <img src="./assets/img/de.png" alt=""></p>
-                        <p v-if="(film.original_language == 'es')">Lingua: <img src="./assets/img/es.png" alt=""></p>
-                        <p v-if="film.vote_average == 0">Voto: 0</p>
-                        <p v-else>Voto: <span v-for="(number, index) in Math.ceil(film.vote_average/2)"><i class="fas fa-star"></i></span></p>
+
+                        <p v-if="langs.includes(film.original_language)">Lingua: <img :src="getFlag(film.original_language)" alt=""></p>
+                        <p v-else>Lingua: {{film.original_language}}</p>
+
+                        <p>Voto: 
+                            <i class="fas fa-star" v-for="(number, index) in Math.ceil(film.vote_average/2)"></i><i class="far fa-star" v-for="(number, index) in (5 - Math.ceil(film.vote_average/2))"></i>
+                        </p>
                     </div>
-                    <!-- /Card -->
+                    <!-- /Card Film -->
                     
                     <div class="card" v-for="tvSerie in tvSeries">
                         <h3>{{tvSerie.name}}</h3>
                         <p>Titolo originale: {{tvSerie.original_name}}</p>
-                        <p v-if="(tvSerie.original_language == 'en')">Lingua: <img src="./assets/img/en.png" alt=""></p>
-                        <p v-if="(tvSerie.original_language == 'it')">Lingua: <img src="./assets/img/it.png" alt=""></p>
-                        <p v-if="(tvSerie.original_language == 'fr')">Lingua: <img src="./assets/img/fr.png" alt=""></p>
-                        <p v-if="(tvSerie.original_language == 'de')">Lingua: <img src="./assets/img/de.png" alt=""></p>
-                        <p v-if="(tvSerie.original_language == 'es')">Lingua: <img src="./assets/img/es.png" alt=""></p>
-                        <p v-if="tvSerie.vote_average == 0">Voto: 0</p>
-                        <p v-else>Voto: <span v-for="(number, index) in Math.ceil(tvSerie.vote_average/2)"><i class="fas fa-star"></i></span></p>
+
+                        <p v-if="langs.includes(tvSerie.original_language)">Lingua: <img :src="getFlag(tvSerie.original_language)" alt=""></p>
+                        <p v-else>Lingua: {{tvSerie.original_language}}</p>
+                        
+                        <p>Voto: 
+                            <i class="fas fa-star" v-for="(number, index) in Math.ceil(tvSerie.vote_average/2)"></i><i class="far fa-star" v-for="(number, index) in (5 - Math.ceil(tvSerie.vote_average/2))"></i>
+                        </p>
                     </div>
-                    <!-- /Card -->
+                    <!-- /Card SerieTV-->
 
                 </div>
                 <!-- /Container -->
