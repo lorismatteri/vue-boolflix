@@ -79,19 +79,13 @@ header {
     height: 100%;
     margin: 0;
     background-color: #252525;
-}
-
-.no_visible {
     opacity: 0;
+    transition: all .5s ease-out;
 }
 
-.visible {
+.card.details:hover {
     opacity: 1;
 }
-
-/* .card.details:hover {
-    opacity: 1;
-} */
 
 .card h3 {
     padding-bottom: 0.5rem;
