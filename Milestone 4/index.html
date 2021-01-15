@@ -56,7 +56,7 @@
                         </div>
                         <!-- /Immagine -->
 
-                        <div class="card details" >
+                        <div :class="visibility" class="card details" @mouseover="hoverIn" @mouseout="hoverOut">
     
                             <h3>{{film.title}}</h3>
                             <p><strong>Titolo originale:</strong> {{film.original_title}}</p>

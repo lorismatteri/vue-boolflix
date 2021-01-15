@@ -5,6 +5,7 @@ let app = new Vue ({
         tvSeries: [],
         searchString: "",
         langs: ['en', 'it', 'es', 'fr', 'de'],
+        visibility: 'no_visible'
     },
     methods: {
         cercaFilm: function (string){
@@ -33,6 +34,12 @@ let app = new Vue ({
         },
         getCover: function(cover){
             return `https://image.tmdb.org/t/p/w342/${cover}`
+        },
+        hoverIn: function(){
+            this.visibility = 'visible'
+        },
+        hoverOut: function(){
+            this.visibility = 'no_visible'
         }
     },
 })
