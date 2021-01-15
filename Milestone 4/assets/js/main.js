@@ -12,6 +12,14 @@ let app = new Vue ({
             .then(response => {
                 this.films = response.data.results;
                 console.log(this.films);
+                //Per scoprire la lunghezza dell'overview
+                /* for (let i = 0; i < this.films.length; i++) {
+                    console.log(this.films[i].overview);
+                    let descr = this.films[i].overview;
+                    console.log(descr.length);
+                    
+                } */
+                
             });	
             axios.get("https://api.themoviedb.org/3/search/tv?api_key=ebf14a283df056252b947c3b861417f2&language=it-IT&query=" + string).then(response => {
                 this.tvSeries = response.data.results;

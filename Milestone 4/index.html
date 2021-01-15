@@ -68,7 +68,8 @@
                                 <i class="fas fa-star" v-for="(number, index) in Math.ceil(film.vote_average/2)"></i><i class="far fa-star" v-for="(number, index) in (5 - Math.ceil(film.vote_average/2))"></i>
                             </p>
 
-                            <p><strong>Overview:</strong> {{film.overview}}</p>
+                            <p v-if="film.overview.length > 500"><strong>Overview:</strong> {{film.overview.slice(0, 420)}}...</p>
+                            <p v-else>{{film.overview}}</p>
     
                         </div>
                     </div>
@@ -94,7 +95,8 @@
                                 <i class="fas fa-star" v-for="(number, index) in Math.ceil(tvSerie.vote_average/2)"></i><i class="far fa-star" v-for="(number, index) in (5 - Math.ceil(tvSerie.vote_average/2))"></i>
                             </p>
 
-                            <p><strong>Overview:</strong> {{tvSerie.overview}}</p>
+                            <p v-if="tvSerie.overview.length > 500"><strong>Overview:</strong> {{tvSerie.overview.slice(0, 420)}}...</p>
+                            <p v-else>{{tvSerie.overview}}</p>
     
                         </div>
                     </div>
